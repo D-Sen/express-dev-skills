@@ -1,0 +1,13 @@
+  <body>
+    <h1>Skills</h1>
+    <ul>
+      <% skills.forEach(function(t) { %>
+        <li>
+          <%= t.skill %>
+            - 
+          <%= t.done ? 'done' : 'not done' %>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+
