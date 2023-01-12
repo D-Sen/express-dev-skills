@@ -4,7 +4,9 @@ const Skill = require('../models/skill');
 
 module.exports = {
    index,
-   show
+   show,
+   new: newSkill,
+   create
  };
 
  function index(req, res) {
@@ -21,6 +23,16 @@ function show(req, res) {
    });
 }
 
+// 'New Skill' title isnt working
+function newSkill(req, res) {
+  res.render('skills/new', { title: 'New Skill' });
+}
+
+function create(req, res) {
+  console.log(req.body);
+  Skill.create(req.body);
+  res.redirect('/skills');
+}
 
 //title: 'Skill Details'
 
